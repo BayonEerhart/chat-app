@@ -26,7 +26,7 @@ function chat()
         $x = " chat van: " . $_GET["chat"];
         return $x;
     } else {
-        return "select a chat to start chating";
+        return "chat van:";
     }
 }
 function error() 
