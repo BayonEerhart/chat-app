@@ -28,8 +28,8 @@ function resize() {
     heading = document.getElementById('sceen-resize');
     screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     if (screenWidth <= 600) {
-        heading.style.width = '100%';
+        heading.style = 'background-color: rgb(53, 53, 49); width: 100%; position: absolute; top: 68px; right: 0; bottom: 0; overflow-y: auto; height: calc(100vh - 68px); background-color: blue;';
     } else {
-        heading.style.width = '100%';
+        heading.style = 'background-color: rgb(53, 53, 49); width: 80%; position: absolute; top: 68px; right: 0; bottom: 0; overflow-y: auto; height: calc(100vh - 68px); background-color: blue;';
     }
 }

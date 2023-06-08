@@ -88,8 +88,8 @@ if (isset($result["id"])){
                         if ($i["username"] != $_SESSION["username"]) { 
                             ?>
                             <a class="side-bar-items" href="index.php?chat=<?php echo $i["username"]; ?>">
-                                    <img class="list_php" src="pfp/<?php echo pfp($i["id"]); ?>" alt="pfp">
-                                    <p class="tekst-container somting"><?php echo $i["username"]; ?></p>
+                                <img class="list_php" src="pfp/<?php echo pfp($i["id"]); ?>" alt="pfp">
+                                <p class="tekst-container somting"><?php echo $i["username"]; ?></p>
                             </a>
                     <?php }
                     }
@@ -101,104 +101,104 @@ if (isset($result["id"])){
         
 
 
-    <div class="sceen-resize">
+    <div id="sceen-resize" >
+    <div>
+            <p>kek</p>
+        </div>    
         <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+               <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
+        </div>    
+        <div>
             <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-            <p>kek</p>
-
-        </div>       
+        </div>    
+           
     </div>
 
 
@@ -208,7 +208,6 @@ if (isset($result["id"])){
     <script>
         $(document).ready(function() {
             setInterval(function() {
-                console.log("kek")
                 $.ajax({
                     url: 'check-updates.php?id=<?php if (isset($highest_id)) {echo $highest_id;} ?>&chater_id=<?php if (isset($chater_id)) {echo $chater_id;} ?>&user_id=<?= $user_id ?>',
                   dataType: 'json',
