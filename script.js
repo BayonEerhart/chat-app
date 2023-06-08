@@ -25,4 +25,11 @@ function resize() {
     } else {
         heading.style.display = 'none';
     }
+    heading = document.getElementById('sceen-resize');
+    screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if (screenWidth <= 600) {
+        heading.style.width = '100%';
+    } else {
+        heading.style.width = '100%';
+    }
 }

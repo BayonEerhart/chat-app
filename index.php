@@ -101,7 +101,7 @@ if (isset($result["id"])){
         
 
 
-    <div class="scrol-main-chat">
+    <div class="sceen-resize">
         <div>
             <p>kek</p>
             <p>kek</p>
