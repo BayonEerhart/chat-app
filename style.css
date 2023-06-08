@@ -72,6 +72,8 @@ nav>h2 {
     color: red;
 }
 
+
+/* 
 #sceen-resize {
     background-color: rgb(53, 53, 49);
     width: 80%;
@@ -81,7 +83,7 @@ nav>h2 {
     bottom: 0;
     overflow-y: auto;
     height: calc(100vh - 68px);
-    background-color: blue;
+    background-color: blue; 
 }
 
 .scrol-main-chat {
@@ -93,5 +95,5 @@ nav>h2 {
     bottom: 0;
     overflow-y: auto;
     height: calc(100vh - 68px);
-    background-color: blue;
-}
+    background-color: blue; 
+} */
