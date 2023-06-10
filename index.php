@@ -74,7 +74,7 @@ if (isset($result["id"])){
             <form class="" action="add_friend.php?id=<?= $user_id; ?>&chat=<?= $_GET["chat"] ?>" method="post">
                 <input  type="text" class="max-size" name="add_name" placeholder="add a name">
             </form>
-            <p class="red"><?= error()?></p>
+            <p class="red"><?php echo  error()?></p>
             <div>
                 <?php
                 $stmt = $pdo->query(
@@ -101,104 +101,8 @@ if (isset($result["id"])){
         
 
 
-    <div id="sceen-resize" >
-    <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-               <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-        <div>
-            <p>kek</p>
-        </div>    
-           
+    <div id="sceen-resize">
+
     </div>
 
 
@@ -214,7 +118,7 @@ if (isset($result["id"])){
                   success: function(data) {
                     console.log(data)
                     if (data == true){
-                        location.reload();
+                        
                     }
                 }
               });

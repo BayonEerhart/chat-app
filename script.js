@@ -10,26 +10,19 @@ window.addEventListener("load", function() {
 })
 
 function resize() {
-    let heading = document.getElementById('small-size-remove');
     let screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    let heading = document.getElementById('small-size-remove');
+    let heading1 = document.getElementById('small-size-apear');
+    let heading2 = document.getElementById('sceen-resize');
 
     if (screenWidth <= 600) {
         heading.style.display = 'none';
+        heading1.style.display = 'block';
+        heading2.style = ' width: 100%; position: absolute; top: 68px; right: 0; bottom: 0; overflow-y: auto; height: calc(100vh - 68px);';
     } else {
         heading.style.display = 'block';
+        heading1.style.display = 'none';
+        heading2.style = 'width: 80%; position: absolute; top: 68px; right: 0; bottom: 0; overflow-y: auto; height: calc(100vh - 68px);';
     }
-    heading = document.getElementById('small-size-apear');
-    screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    if (screenWidth <= 600) {
-        heading.style.display = 'block';
-    } else {
-        heading.style.display = 'none';
-    }
-    heading = document.getElementById('sceen-resize');
-    screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    if (screenWidth <= 600) {
-        heading.style = 'background-color: rgb(53, 53, 49); width: 100%; position: absolute; top: 68px; right: 0; bottom: 0; overflow-y: auto; height: calc(100vh - 68px); background-color: blue;';
-    } else {
-        heading.style = 'background-color: rgb(53, 53, 49); width: 80%; position: absolute; top: 68px; right: 0; bottom: 0; overflow-y: auto; height: calc(100vh - 68px); background-color: blue;';
-    }
+
 }
