@@ -3,10 +3,12 @@
 include_once "connect.php";
 session_start();
 
+
 if (!isset($_SESSION["loggedInUser"])) {
     header("Location: login.php");
     die();
 }
+
 function pfp($id)
 {
     if (file_exists("pfp/$id.png")) {
@@ -31,13 +33,12 @@ function chat()
 }
 function error() 
 {
-    if ($_GET["error"]){
+    if (isset($_GET["error"]) && $_GET["error"]){
         return $_GET["error"];
     } else {
         return;
     }
 }
-
 
 $stmt = $pdo->prepare("SELECT id FROM users WHERE username = :name");
 $stmt->bindParam(":name", $_SESSION["username"]);
@@ -69,7 +70,7 @@ if (isset($result["id"])){
 </head>
 <body>
     <?php include_once("nav_bar.php")?>
-    <div id="movingElement" class="screen">
+    <div id="movingElement" class="flex-row">
         <div class="side-bar" id="small-size-remove">
             <form class="" action="add_friend.php?id=<?= $user_id; ?>&chat=<?= $_GET["chat"] ?>" method="post">
                 <input  type="text" class="max-size" name="add_name" placeholder="add a name">
@@ -98,13 +99,12 @@ if (isset($result["id"])){
             </div>
         </div>
     </div>
-        
+
 
 
     <div id="sceen-resize">
-
+        <?php include("massage.php")?>
     </div>
-
 
 
 
@@ -118,7 +118,7 @@ if (isset($result["id"])){
                   success: function(data) {
                     console.log(data)
                     if (data == true){
-                        
+                        console.log(data)
                     }
                 }
               });

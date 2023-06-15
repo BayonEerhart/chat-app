@@ -38,9 +38,14 @@ nav>h2 {
     height: calc(100vh - 68px);
 }
 
-.screen {
+.flex-row {
     display: flex;
     flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .list_php {
@@ -71,29 +76,3 @@ nav>h2 {
 .red {
     color: red;
 }
-
-
-/* 
-#sceen-resize {
-    background-color: rgb(53, 53, 49);
-    width: 80%;
-    position: absolute;
-    top: 68px;
-    right: 0;
-    bottom: 0;
-    overflow-y: auto;
-    height: calc(100vh - 68px);
-    background-color: blue; 
-}
-
-.scrol-main-chat {
-    background-color: rgb(53, 53, 49);
-    width: 80%;
-    position: absolute;
-    top: 68px;
-    right: 0;
-    bottom: 0;
-    overflow-y: auto;
-    height: calc(100vh - 68px);
-    background-color: blue; 
-} */
