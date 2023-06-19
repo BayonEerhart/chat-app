@@ -9,6 +9,14 @@ if (!isset($_SESSION["loggedInUser"])) {
     die();
 }
 
+if (!isset($_SESSION["highest_id"])){
+
+    $_SESSION["highest_id"] = 0;
+    $_SESSION["highest_id"];
+}else {
+    $_SESSION["highest_id"];
+}
+
 function pfp($id)
 {
     if (file_exists("pfp/$id.png")) {
@@ -61,12 +69,11 @@ if (isset($result["id"])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>chat-app</title>
     <link rel="stylesheet" typle="text/css" href="style.css">
     <link rel="stylesheet" typle="text/css" href="scrol.css">
     <script src="script.js" defer></script>
     <script src="jquery.min.js"></script>
-
 </head>
 <body>
     <?php include_once("nav_bar.php")?>
@@ -100,20 +107,15 @@ if (isset($result["id"])){
         </div>
     </div>
 
-
-
     <div id="sceen-resize">
         <?php include("massage.php")?>
     </div>
-
-
-
 
     <script>
         $(document).ready(function() {
             setInterval(function() {
                 $.ajax({
-                    url: 'check-updates.php?id=<?php if (isset($highest_id)) {echo $highest_id;} ?>&chater_id=<?php if (isset($chater_id)) {echo $chater_id;} ?>&user_id=<?= $user_id ?>',
+                    url: 'check-updates.php?id=<?php if (isset($_SESSION["highest_id"])) {echo $_SESSION["highest_id"];} ?>&chater_id=<?php if (isset($chater_id)) {echo $chater_id;} ?>&user_id=<?= $user_id ?>',
                   dataType: 'json',
                   success: function(data) {
                     console.log(data)

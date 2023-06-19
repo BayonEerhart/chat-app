@@ -18,11 +18,11 @@ function resize() {
     if (screenWidth <= 600) {
         heading.style.display = 'none';
         heading1.style.display = 'block';
-        heading2.style = ' width: 100%; position: absolute; top: 68px; right: 0; bottom: 0; overflow-y: auto; height: calc(100vh - 68px);';
+        heading2.style.width = "100%"
     } else {
         heading.style.display = 'block';
         heading1.style.display = 'none';
-        heading2.style = 'width: 80%; position: absolute; top: 68px; right: 0; bottom: 0; overflow-y: auto; height: calc(100vh - 68px);';
+        heading2.style.width = "80%";
     }
 
 }

@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: rgb(110, 108, 108);   /*  this is for now the  color idk if i found somting beter change this as main back ground */
 }
 
 nav {
@@ -83,4 +84,30 @@ nav>h2 {
 }
 .changelog-body>div>p {
     width: 60%;
+}
+#sceen-resize {
+    position: absolute; 
+    top: 68px; 
+    right: 0; 
+    bottom: 0; 
+    overflow-y: auto;
+    height: calc(100vh - 68px);
+}
+.arrow-img {
+    height: 50px;
+
+}
+ 
+.nav-bar-settings {
+    display: flex;
+    align-items: center;
+}
+.arrow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100%; 
+}
+.friend-list {
+    background-color: rgb(53, 53, 49);
 }
