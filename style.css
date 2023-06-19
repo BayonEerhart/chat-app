@@ -76,3 +76,11 @@ nav>h2 {
 .red {
     color: red;
 }
+
+.changelog-body {
+    background-color: rgb(53, 53, 49);
+    color: gainsboro;
+}
+.changelog-body>div>p {
+    width: 60%;
+}

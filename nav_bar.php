@@ -5,6 +5,7 @@
     <div class="column">
         <a href="login.php">logout</a>
         <a href="profiel.php">profiel</a>
+        <a href="change_log.html">change log</a>
     </div>
 </nav>
 
