@@ -33,7 +33,7 @@ nav>h2 {
     position: absolute;
     top: 68px;
     left: 0;
-    right: 0;index.php
+    right: 0;
     bottom: 0;
     overflow-y: auto;
     height: calc(100vh - 68px);
@@ -112,15 +112,3 @@ nav>h2 {
     background-color: rgb(53, 53, 49);
 }
 
-
-
-
-body {
-    transform: rotate(45deg) translateY(100px);
-    transition: transform 3s cubic-bezier(1, 4.25, 0, -2.1) -0.5s;
-    
-}
-
-body *:hover {
-    transform: translateX(-50px) translateY(70px);
-}
