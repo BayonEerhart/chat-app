@@ -3,11 +3,10 @@ window.onload = function() {
 }
 
 window.addEventListener('resize', function() {
-        resize()
+        resize();
 });
 window.addEventListener("load", function() {
-
-        resize()
+        resize();
 })
 
 function resize() {

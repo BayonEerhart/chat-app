@@ -29,7 +29,7 @@
 <div class="flex-row">
     <img class="list_php" src="pfp/none.png" alt="">
     <div>
-        <h3>name</h3>
+        <h3>name2</h3>
         <p>hi</p>
     </div>
 </div>
