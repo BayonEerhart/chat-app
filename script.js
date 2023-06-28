@@ -1,5 +1,6 @@
 window.onload = function() {
-    window.scrollTo(0, document.body.scrollHeight);
+    const element = document.getElementById('sceen-resize')
+    element.scrollTop = element.scrollHeight;
 }
 
 window.addEventListener('resize', function() {
