@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 body {
+    font-family: 'CustomFontName', sans-serif;
     margin: 0;
-    background-color: rgb(110, 108, 108);   /*  this is for now the  color idk if i found somting beter change this as main back ground */
+    background-color: #191c1b;   /*  this is for now the  color idk if i found somting beter change this as main back ground */
 }
 
 nav {
-    border-bottom: 1px black solid;
+    border-bottom: 1px #89938f solid;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(53, 53, 49);
+    background-color: #191c1b;
 }
 
 .column {
@@ -24,17 +26,19 @@ nav {
 
 a,
 nav>h2 {
-    color: white;
+    color: #e0e3e1;
 }
-
+.side-bar-items:hover {
+    border-radius: 30px;
+    background-color: #005144;
+}
 .side-bar {
-    background-color: rgb(53, 53, 49);
+    background-color: #191c1b;
+    border-right: solid #e0e3e1 1px;
     width: 20%;
     position: absolute;
-    top: 68px;
     left: 0;
     right: 0;
-    bottom: 0;
     overflow-y: auto;
     height: calc(100vh - 68px);
 }
@@ -53,17 +57,15 @@ nav>h2 {
     height: 70px;
     width: 70px;
     border-radius: 100%;
-    border: solid black 1px;
+    border: solid #e0e3e1 1px;
     margin: 1px;
 }
 
 .side-bar-items {
-    border: 1px black solid;
     display: flex;
 }
 
 .tekst-container {
-    width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -75,11 +77,11 @@ nav>h2 {
 }
 
 .red {
-    color: red;
+    color: #ffb4ab;
 }
 
 .changelog-body {
-    background-color: rgb(53, 53, 49);
+    background-color: #191c1b;
     color: gainsboro;
 }
 .changelog-body>div>p {
@@ -87,7 +89,6 @@ nav>h2 {
 }
 #sceen-resize {
     position: absolute; 
-    top: 68px; 
     right: 0; 
     bottom: 0; 
     overflow-y: auto;
@@ -109,6 +110,12 @@ nav>h2 {
     height: 100%; 
 }
 .friend-list {
-    background-color: rgb(53, 53, 49);
+    background-color: #191c1b;
 }
+
+a {
+    text-decoration: none;
+}
+
+
 
