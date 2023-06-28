@@ -89,6 +89,7 @@ nav>h2 {
 }
 #sceen-resize {
     position: absolute; 
+    top: 68px;
     right: 0; 
     bottom: 0; 
     overflow-y: auto;
