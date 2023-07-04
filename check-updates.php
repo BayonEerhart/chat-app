@@ -15,14 +15,11 @@ foreach ($rows as $row) {
         ($row["sender_id"] == $user_id && $row["recipient_id"] == $chater_id) ||
         ($row["sender_id"] == $chater_id && $row["recipient_id"] == $user_id)
     ) {
-        echo json_encode("kek");
-        die();
         if ($row["id"] > $old_id) {
-
-            echo json_encode("hi");
+            $_SESSION["highest_id"] = $row["id"];
+            echo json_encode([$row["content"], $row["sender_id"], $row["id"]]);
             die();
         }
     }
 }
 ?>
-

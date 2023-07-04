@@ -5,7 +5,7 @@
             <img class="arrow-img" src="img/arrow.png" alt="arrow back">
         </div>
     </a>
-    <h2 class="white-text tekst-container" ><?= chat(); ?></h2>
+    <h2 class="white-text tekst-container" >chat van: <?= chat(); ?></h2>
     <div class="column arrow-container">
         <a href="login.php">logout</a>
         <a href="profiel.php">profiel</a>

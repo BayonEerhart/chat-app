@@ -93,7 +93,7 @@ nav>h2 {
     right: 0; 
     bottom: 0; 
     overflow-y: auto;
-    height: calc(100vh - 68px);
+    height: calc(99.8vh - 68px);
 }
 .arrow-img {
     height: 50px;

@@ -9,13 +9,6 @@ if (!isset($_SESSION["loggedInUser"])) {
     die();
 }
 
-if (!isset($_SESSION["highest_id"])){
-
-    $_SESSION["highest_id"] = 0;
-    $_SESSION["highest_id"];
-}else {
-    $_SESSION["highest_id"];
-}
 
 function pfp($id)
 {
@@ -33,12 +26,18 @@ function name()
 function chat()
 {
     if (isset($_GET["chat"])) {
-        $x = " chat van: " . $_GET["chat"];
+        $x = $_GET["chat"];
         return $x;
     } else {
         return "chat van:";
     }
 }
+
+if (!isset($_SESSION[chat()])){
+    $_SESSION[chat()] = 0;
+}
+ 
+
 function error() 
 {
     if (isset($_GET["error"]) && $_GET["error"]){
@@ -63,6 +62,7 @@ if (isset($result["id"])){
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,8 +74,10 @@ if (isset($result["id"])){
     <link rel="stylesheet" typle="text/css" href="scrol.css">
     <script src="script.js" defer></script>
     <script src="jquery.min.js"></script>
+
 </head>
 <body>
+    <script>console.log($_SESSION[chat()])</script>
     <?php include_once("nav_bar.php")?>
     <div id="movingElement" class="flex-row">
         <div class="side-bar" id="small-size-remove">
@@ -108,7 +110,8 @@ if (isset($result["id"])){
     </div>
 
     <div id="sceen-resize">
-        <?php include("massage.php")?>
+        <div id="chat-container"></div>
+
     </div>
 
     <script>
@@ -116,16 +119,23 @@ if (isset($result["id"])){
             setInterval(function() {
                 $.ajax({
                     url: 'check-updates.php?id=<?php if (isset($_SESSION["highest_id"])) {echo $_SESSION["highest_id"];} ?>&chater_id=<?php if (isset($chater_id)) {echo $chater_id;} ?>&user_id=<?= $user_id ?>',
-                  dataType: 'json',
-                  success: function(data) {
-                    console.log(data)
-                    if (data == true){
-                        console.log(data)
-                    }
+                    dataType: 'json',
+                    success: function(data) {
+                        
+                    $(document).ready(function() {
+                    $.ajax({
+                        url: "massage.php?data=" + data[0] + "&sender=" + data[1] + "&chater_id=<?=$chater_id?>&chat_name=<?php echo chat()?>", 
+                        type: "GET",
+                        success: function(response) {
+                            $("#chat-container").html(response);
+                        }
+                    }); 
+                  });
                 }
               });
-          }, 500);   
+          }, 1000);   
         });
+        
     </script>
 </body>
 </html>
