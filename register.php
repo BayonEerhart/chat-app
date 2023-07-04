@@ -7,7 +7,11 @@ if (isset($_SESSION["loggedInUser"])) {
     header("Location: index.php");
     die();
 }
+echo $_session["code"] ;
+echo  $_POST["code"] ;
 if (isset($_POST["password"]) && isset($_POST["username"])) {
+    die();
+
     if (
         strlen($_POST["username"]) <= 99 &&
         strlen($_POST["username"]) >= 1 &&
@@ -56,7 +60,12 @@ if (isset($massage)){
     <title>resgister</title>
 </head>
 <body>
+    <form action="mail_sender.php" method="get">
+        <input type="email" name="email" value="<?php if (isset($_GET['email'])){echo $_GET['email'];} else {echo 'email plz';}?>">
+        <input type="submit" value="get code">    
+    </form>
     <form method="post">
+        <input name="code" type="text"> 
         <input name="username" type="text">
         <input name="password" type="password">
         <input type="submit" value="register!">    
