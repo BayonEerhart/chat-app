@@ -27,3 +27,6 @@
 [Tue Jul 04 13:43:56.311652 2023] [php:error] [pid 103528] [client 127.0.0.1:41960] PHP Fatal error:  Uncaught ArgumentCountError: end() expects exactly 1 argument, 0 given in /home/bayon/Documents/bit-academy/my-projects/chat-app/mail_sender.php:17\nStack trace:\n#0 /home/bayon/Documents/bit-academy/my-projects/chat-app/mail_sender.php(17): end()\n#1 {main}\n  thrown in /home/bayon/Documents/bit-academy/my-projects/chat-app/mail_sender.php on line 17, referer: http://uwu.uwu/my-projects/chat-app/register.php?
 
 
+[Tue Jul 04 15:19:46.034422 2023] [php:error] [pid 1362] [client 127.0.0.1:40206] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'password='123', friends='[]'' at line 1 in /home/bayon/Documents/bit-academy/my-projects/chat-app/register.php:24\nStack trace:\n#0 /home/bayon/Documents/bit-academy/my-projects/chat-app/register.php(24): PDOStatement->execute()\n#1 {main}\n  thrown in /home/bayon/Documents/bit-academy/my-projects/chat-app/register.php on line 24, referer: http://uwu.uwu/my-projects/chat-app/register.php?email=bayoneerhart43@gmail.com
+
+

@@ -7,11 +7,7 @@ if (isset($_SESSION["loggedInUser"])) {
     header("Location: index.php");
     die();
 }
-echo $_session["code"] ;
-echo  $_POST["code"] ;
-if (isset($_POST["password"]) && isset($_POST["username"])) {
-    die();
-
+if (isset($_POST["password"]) && isset($_POST["username"]) && $_SESSION["code"] ==  $_POST["code"]) {
     if (
         strlen($_POST["username"]) <= 99 &&
         strlen($_POST["username"]) >= 1 &&
@@ -24,13 +20,12 @@ if (isset($_POST["password"]) && isset($_POST["username"])) {
         $stmt->execute([$username]);
         $user = $stmt->fetch();
         if (!$user) {
-            $sql =
-                "INSERT INTO  users SET username=?, password=?, friends='[]';";
-            $pdo->prepare($sql)->execute([$username, $pass]);
+            $sql = "INSERT INTO  users SET username=?, email=? password=?, friends='[]';";
+            $pdo->prepare($sql)->execute([$username, $_GET['email'], $pass]);
             $stmt = $pdo->prepare(
                 "SELECT * FROM users WHERE username = :username AND password = :password"
             );
-            $stmt->execute(["username" => $username, "password" => $pass]);
+            $stmt->execute(["username" => $username, "email" => $_GET['email'], "password" => $pass]);
             $user = $stmt->fetch();
 
             if ($user !== false) {
@@ -62,7 +57,7 @@ if (isset($massage)){
 <body>
     <form action="mail_sender.php" method="get">
         <input type="email" name="email" value="<?php if (isset($_GET['email'])){echo $_GET['email'];} else {echo 'email plz';}?>">
-        <input type="submit" value="get code">    
+        <input style="<?php if (isset($_GET['email'])){echo "background-color: green;";}?>" type="submit" value="get code">    
     </form>
     <form method="post">
         <input name="code" type="text"> 
