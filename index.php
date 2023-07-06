@@ -14,8 +14,9 @@ function pfp($id)
 {
     if (file_exists("pfp/$id.png")) {
         return "$id.png";
+    } else {
+        return "none.png";
     }
-    return "none.png";
 }
 function name()
 {
@@ -77,7 +78,6 @@ if (isset($result["id"])){
 
 </head>
 <body>
-    <script>console.log($_SESSION[chat()])</script>
     <?php include_once("nav_bar.php")?>
     <div id="movingElement" class="flex-row">
         <div class="side-bar" id="small-size-remove">
@@ -110,32 +110,37 @@ if (isset($result["id"])){
     </div>
 
     <div id="sceen-resize">
-        <div id="chat-container"></div>
-
+        <div id="chat-container">
+            <?php include("massage.php")?>
+                <!-- all the massages loaded by js :D -->
+        </div>
+    </div   >
+    <div class="text_buble">
+        <input class="text_prompt" type="text">
     </div>
 
+
     <script>
+        let urls = 'check-updates.php?id=' + highest_id + '&chater_id=<?php if (isset($chater_id)) {echo $chater_id;} ?>&user_id=<?= $user_id ?>'
         $(document).ready(function() {
             setInterval(function() {
                 $.ajax({
-                    url: 'check-updates.php?id=<?php if (isset($_SESSION["highest_id"])) {echo $_SESSION["highest_id"];} ?>&chater_id=<?php if (isset($chater_id)) {echo $chater_id;} ?>&user_id=<?= $user_id ?>',
+                    url: urls,
                     dataType: 'json',
                     success: function(data) {
-                        
-                    $(document).ready(function() {
-                    $.ajax({
-                        url: "massage.php?data=" + data[0] + "&sender=" + data[1] + "&chater_id=<?=$chater_id?>&chat_name=<?php echo chat()?>", 
-                        type: "GET",
-                        success: function(response) {
-                            $("#chat-container").html(response);
-                        }
-                    }); 
-                  });
-                }
-              });
-          }, 1000);   
+                        let parentDiv = document.getElementById("chat-container");
+                        var newElement = document.createElement("div");
+                        newElement.innerHTML = '<div class="flex-row ">\n<img class="list_php" src="pfp/<?=pfp(id_to_name($result["sender_id"], $pdo))?>" alt="">\n<div>\n    <h3>' + data[1] + '</h3>\n    <p class=> ' + data[0] + '</p>\n</div>\n</div>';
+                        parentDiv.appendChild(newElement)
+                        highest_id = data[2];
+                        urls = 'check-updates.php?id=' + highest_id + '&chater_id=<?php if (isset($chater_id)) {echo $chater_id;} ?>&user_id=<?= $user_id ?>'
+                        const element = document.getElementById('sceen-resize')
+                        element.scrollTop = element.scrollHeight;
+                    }
+                });
+            }, 1000);   
         });
-        
-    </script>
+        </script>
+  
 </body>
 </html>

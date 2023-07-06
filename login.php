@@ -9,16 +9,19 @@ unset($_SESSION["username"]);
 if (isset($_POST["username"]) && isset($_POST["password"])) {
     $username = $_POST["username"];
     $pass = $_POST["password"];
-    $stmt = $pdo->prepare(
-        "SELECT * FROM users WHERE username = :username AND password = :password"
-    );
-    $stmt->execute(["username" => $username, "password" => $pass]);
-    $user = $stmt->fetch();
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($result) {
+        if (password_verify($pass, $result['password'])) {
+            $_SESSION["loggedInUser"] = $result["id"];
+            $_SESSION["username"] = $username;
+            header("Location: index.php");
+            die();
+        }
+    }
     if ($user !== false) {
-        $_SESSION["loggedInUser"] = $user["id"];
-        $_SESSION["username"] = $username;
-        header("Location: index.php");
-        die();
     }
     echo "Gebruikersnaam of wachtwoord is ongeldig.";
 }

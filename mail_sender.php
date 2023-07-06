@@ -23,7 +23,8 @@ $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 $mail->isSMTP();                                               
 $mail->Host       = 'smtp-mail.outlook.com';                   
 $mail->SMTPAuth   = true;                                      
-include_once("passwords.php");                                 
+include_once("passwords.php");  
+$mail->Password   = $mail_password;                               
 $mail->Username   = $mail_adress;                 
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            
 $mail->Port       = 587;                                     
@@ -38,7 +39,5 @@ $mail->AltBody = "no html found? well still ur code: $code";
 header("Location: register.php?email=" . $_GET['email']);
 $mail->send();
 die();
-
-    
 
 ?>

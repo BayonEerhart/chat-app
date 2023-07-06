@@ -7,7 +7,7 @@ if (isset($_SESSION["loggedInUser"])) {
     header("Location: index.php");
     die();
 }
-if (isset($_POST["password"]) && isset($_POST["username"]) && $_SESSION["code"] !=  $_POST["code"]) {
+if (isset($_POST["password"]) && isset($_POST["username"]) && $_SESSION["code"] ==  $_POST["code"]) {
     if (
         strlen($_POST["username"]) <= 99 &&
         strlen($_POST["username"]) >= 1 &&
@@ -15,7 +15,7 @@ if (isset($_POST["password"]) && isset($_POST["username"]) && $_SESSION["code"] 
         strlen($_POST["password"]) >= 1
     ) {
         $username = $_POST["username"];
-        $pass = $_POST["password"];
+        $pass = (password_hash($_POST["password"], PASSWORD_DEFAULT));
         $email= $_GET['email'];
         $stmt = $pdo->prepare("SELECT * FROM users WHERE username=?");
         $stmt->execute([$username]);
@@ -26,7 +26,7 @@ if (isset($_POST["password"]) && isset($_POST["username"]) && $_SESSION["code"] 
             $stmt = $pdo->prepare(
                 "SELECT * FROM users WHERE username = :username AND email = :email AND password = :password"
             );
-            $stmt->execute(["username" => $username, "email" => $_GET['email'], "password" => $pass]);
+            $stmt->execute(["username" => $username, "email" => $_GET['email'], "password" => $pass]); 
             $user = $stmt->fetch();
 
             if ($user !== false) {
@@ -37,7 +37,7 @@ if (isset($_POST["password"]) && isset($_POST["username"]) && $_SESSION["code"] 
             }
         } else {
             $massage = "user name alrdy exist";
-        }
+        } 
     } else {
         $massage = "the name or password is to big or small";
     }
