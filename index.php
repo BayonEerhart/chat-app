@@ -117,7 +117,7 @@ if (isset($result["id"])){
                 <!-- update: that was not true i saw only 1 line js rest php or html -->
         </div>
         <div class="text_buble" >
-            <form action="" method="post">
+            <form action="" method="post" class="text_buble" style="width: 100%;">
                 <input class="text_prompt" type="text">
             </form>
         </div> 
