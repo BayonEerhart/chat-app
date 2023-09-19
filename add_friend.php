@@ -1,3 +1,4 @@
+
 <?php
 
 include_once "connect.php";
@@ -10,6 +11,7 @@ if (isset($_POST["add_name"])) {
     header("Location: index.php");
     die();
 }
+
 $stmt = $pdo->prepare("SELECT id FROM users WHERE username = :name");
 $stmt->bindParam(":name", $name);
 $stmt->execute();
@@ -28,8 +30,16 @@ $friends_json = $result["friends"];
 
 $friends_array = json_decode($friends_json, true);
 if (!isset($chater_id)) {
-    echo "try";
-    header("Location: index.php?chat=" . $_GET["chat"] . "&error=user%20does%20not%20exist");
+    if (isset($_COOKIE['screenWidth'])) {
+        $screenWidth = (int)$_COOKIE['screenWidth'];
+        
+        if ($screenWidth < 600) {
+            header("Location: name_list.php?chat=" . $_GET["chat"] . "&error=user%20does%20not%20exist");
+
+        } else {
+            header("Location: index.php?chat=" . $_GET["chat"] . "&error=user%20does%20not%20exist");
+        }
+    }
     die();
 }
 if (in_array($chater_id, $friends_array)) {

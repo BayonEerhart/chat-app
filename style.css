@@ -124,3 +124,15 @@ nav>h2 {
 a {
     text-decoration: none;
 }
+
+.text_prompt {
+    bottom: 0;
+    margin: 0.8%;
+    width: 75%;
+    position: fixed;
+}
+
+.text_buble {
+    display: flex;
+    justify-content: center;
+}

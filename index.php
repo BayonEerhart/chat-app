@@ -78,6 +78,7 @@ if (isset($result["id"])){
 
 </head>
 <body>
+
     <?php include_once("nav_bar.php")?>
     <div id="movingElement" class="flex-row">
         <div class="side-bar" id="small-size-remove">
@@ -113,10 +114,13 @@ if (isset($result["id"])){
         <div id="chat-container">
             <?php include("massage.php")?>
                 <!-- all the massages loaded by js :D -->
+                <!-- update: that was not true i saw only 1 line js rest php or html -->
         </div>
-    </div   >
-    <div class="text_buble">
-        <input class="text_prompt" type="text">
+        <div class="text_buble" >
+            <form action="" method="post">
+                <input class="text_prompt" type="text">
+            </form>
+        </div> 
     </div>
 
 
@@ -129,7 +133,7 @@ if (isset($result["id"])){
                     dataType: 'json',
                     success: function(data) {
                         let parentDiv = document.getElementById("chat-container");
-                        var newElement = document.createElement("div");
+                        let newElement = document.createElement("div");
                         newElement.innerHTML = '<div class="flex-row ">\n<img class="list_php" src="pfp/<?=pfp(id_to_name($result["sender_id"], $pdo))?>" alt="">\n<div>\n    <h3>' + data[1] + '</h3>\n    <p class=> ' + data[0] + '</p>\n</div>\n</div>';
                         parentDiv.appendChild(newElement)
                         highest_id = data[2];
@@ -138,9 +142,8 @@ if (isset($result["id"])){
                         element.scrollTop = element.scrollHeight;
                     }
                 });
-            }, 1000);   
+            }, 100);   
         });
-        </script>
-  
+    </script>
 </body>
 </html>

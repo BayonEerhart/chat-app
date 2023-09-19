@@ -40,6 +40,9 @@ $user_id = $result["id"];
 </head>
 <body class="friend-list">
         <div >
+            <form class="" action="add_friend.php?id=<?= $user_id; ?>&chat=<?= $_GET["chat"] ?>" method="post">
+                <input  type="text" class="max-size" name="add_name" placeholder="add a name">
+            </form>
             <p class="red"><?php echo  error()?></p>
             <div>
                 <?php
