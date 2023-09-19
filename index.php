@@ -111,14 +111,15 @@ if (isset($result["id"])){
     </div>
 
     <div id="sceen-resize">
-        <div id="chat-container">
+        <div class="chat-container">
             <?php include("massage.php")?>
                 <!-- all the massages loaded by js :D -->
                 <!-- update: that was not true i saw only 1 line js rest php or html -->
         </div>
+        <div><p style="color: #191c1b;">.</p></div>
         <div class="text_buble" >
-            <form action="" method="post" class="text_buble" style="width: 100%;">
-                <input class="text_prompt" type="text">
+            <form action="sent.php?recipient_id=<?= chat()?>" method="post" class="text_buble" style="width: 100%;">
+                <input class="text_prompt" type="text" name="massage">
             </form>
         </div> 
     </div>

@@ -136,3 +136,7 @@ a {
     display: flex;
     justify-content: center;
 }
+
+.chat-container {
+    /* padding-bottom: 4%; */
+}
