@@ -28,7 +28,7 @@ function resize() {
             heading2.style.width = "100%"
         }
     } else {
-        if ((document.location["href"].slice(-13)) == "name_list.php" || (document.location["href"].slice(-51)) != "name_list.php?chat=&error=user%20does%20not%20exist") {
+        if ((document.location["href"].slice(-13)) == "name_list.php" || (document.location["href"].slice(-51)) == "name_list.php?chat=&error=user%20does%20not%20exist") {
             location.href = 'index.php';
         } else if ((document.location["href"].slice(-13)) != "name_list.php" || (document.location["href"].slice(-51)) != "name_list.php?chat=&error=user%20does%20not%20exist") {
             heading.style.display = 'block';
