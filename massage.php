@@ -31,7 +31,7 @@ for ($i = 1; $i <= $big_id; $i++) {
     <script>console.log("<?= $result["content"] ?>")</script>
 
     <div class="flex-row ">
-        <img class="list_php" src="pfp/<?=pfp(id_to_name($result["sender_id"], $pdo))?>" alt="">
+        <img class="list_php" src="pfp/<?=pfp($result["sender_id"])?>" alt="">
         <div>
             <h3><?php echo id_to_name($result["sender_id"], $pdo)?></h3>
             <p ><?= $result["content"]; ?></p>

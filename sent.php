@@ -18,8 +18,7 @@ if (!isset($_SESSION["loggedInUser"])) {
     header("Location: login.php");
     die();
 }
-
-if (!isset($_GET["recipient_id"]) || $_GET["recipient_id"] == "") {
+if (!isset($_GET["recipient_id"]) || $_GET["recipient_id"] == "" || $_GET["recipient_id"] == "chat van:") {
     header("location: index.php");
     die();
 } elseif ($_POST["massage"] == "") {
